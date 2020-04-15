@@ -1,0 +1,53 @@
+    1  exit
+    2  cat /etc/apt/sources.list
+    3  vim /etc/apt/sources.list
+    4  ls
+    5  git clone https://github.com/amitvashisttech/k8s-docker-vmware_15April2020.git
+    6  ls
+    7  cd k8s-docker-vmware_15April2020/
+    8  ls
+    9  mkdir Docker
+   10  ls
+   11  docker ps 
+   12  docker ps -a
+   13  docker images 
+   14  docker run -it ubuntu 
+   15  docker ps 
+   16  docker ps -a
+   17  cat /etc/*-release
+   18  docker run -it ubuntu 
+   19  docker ps 
+   20  docker ps -a
+   21  docker start 84336bb2aea5
+   22  docker ps 
+   23  docker ps
+   24  docker attach 84336bb2aea5
+   25  docker ps 
+   26  docker inspect 84336bb2aea5
+   27  curl 172.17.0.5
+   28  docker ps 
+   29  docker attach 47ecf62ea7a2
+   30  docker ps | grep -i 47ecf62ea7a2
+   31  docker ps -a | grep -i 47ecf62ea7a2
+   32  docker start 47ecf62ea7a2
+   33  docker ps | grep -i 47ecf62ea7a2
+   34  docker attach 47ecf62ea7a2
+   35  docker ps 
+   36  docker attach 84336bb2aea5
+   37  curl 172.17.0.5
+   38  curl 172.17.0.5/info.html
+   39  ip addr 
+   40  docker images 
+   41  docker search centos/7
+   42  docker search centos
+   43  docker search centos/7
+   44  docker pull centos/7
+   45  docker pull centos
+   46  docker pull centos:7
+   47  docker images 
+   48  docker run -it centos:7 
+   49  curl 172.17.0.4
+   50  ls
+   51  cd Docker/
+   52  ls
+   53  history > Day_1_Histroy.txt
