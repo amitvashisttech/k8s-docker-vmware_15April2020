@@ -1,0 +1,10 @@
+IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+514891ac727f        10 minutes ago      /bin/sh -c #(nop)  CMD ["/usr/sbin/apache2ct…   0B                  
+55d1d42dd330        10 minutes ago      /bin/sh -c #(nop) COPY file:1c9a85e8aac2d721…   35B                 
+6e6824b5fbc4        10 minutes ago      /bin/sh -c apt-get install apache2 -y           98.9MB              
+3290db33adde        10 minutes ago      /bin/sh -c apt-get update                       26MB                
+77be327e4b63        7 weeks ago         /bin/sh -c #(nop)  CMD ["/bin/bash"]            0B                  
+<missing>           7 weeks ago         /bin/sh -c mkdir -p /run/systemd && echo 'do…   7B                  
+<missing>           7 weeks ago         /bin/sh -c set -xe   && echo '#!/bin/sh' > /…   745B                
+<missing>           7 weeks ago         /bin/sh -c rm -rf /var/lib/apt/lists/*          0B                  
+<missing>           7 weeks ago         /bin/sh -c #(nop) ADD file:1f70668251e2e58ce…   124MB               

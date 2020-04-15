@@ -144,3 +144,119 @@
   144  cd ..
   145  ls
   146  history > Day_1_Histroy.txt
+  147  cd ..
+  148  ls
+  149  git add . ; git commit -m "DockerFile"; git push 
+  150  ls
+  151  docker images 
+  152  docker history myapache-ubuntu-16-04:v1
+  153  docker inspect myapache-ubuntu-16-04:v1
+  154  ls
+  155  docker images 
+  156  docker myapache-ubuntu-16-04:v1 history --no-trunc
+  157  docker image history --no-trunc  myapache-ubuntu-16-04:v1
+  158  docker image history --no-trunc  myapache-ubuntu-16-04:v1 > image_hist
+  159  cat image_hist 
+  160  vim image_hist 
+  161  docker history myapache-ubuntu-16-04:v1 > image_hist
+  162  vim image_hist 
+  163  docker ps 
+  164  docker run -d -p 8080:80 myapache-ubuntu-16-04:v1
+  165  docker ps 
+  166  curl localhost
+  167  curl localhost:8080
+  168  curl localhost:8080/info.html
+  169  docker ps 
+  170  netstat -tulnp 
+  171  netstat -tulnp | grep -i docker
+  172  docker ps 
+  173  docker run -itd -p 8081:80 myapache-centos-7:v2 
+  174  docker ps 
+  175  history 
+  176  curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  177  chmod +x /usr/local/bin/docker-compose
+  178  cd 
+  179  docker-compose version 
+  180  ls
+  181  docker ps -aq 
+  182  ls
+  183  docker kill $(docker ps -aq)
+  184  docker ps 
+  185  ls
+  186  cd k8s-docker-vmware_15April2020/
+  187  ls
+  188  cd Docker/
+  189  ls
+  190  mkdir DockerCompose
+  191  cd DockerCompose/
+  192  ls
+  193  mkdir apache wordpress
+  194  ls
+  195  cd apache/
+  196  ls
+  197  docker images 
+  198  ls
+  199  vim docker-compose.yaml
+  200  docker images 
+  201  vim docker-compose.yaml
+  202  docker ps 
+  203  docker-compose up -d 
+  204  docker ps 
+  205  cat docker-compose.yaml 
+  206  docker ps 
+  207  docker-compose ps 
+  208  docker-compose stop 
+  209  ls
+  210  docker-compose rm 
+  211  cd ..
+  212  ls
+  213  cd wordpress/
+  214  ls
+  215  vim docker-compose.yaml
+  216  ls
+  217  mkdir nginx
+  218  vim wordpress.conf
+  219  ls
+  220  vim wordpress.conf 
+  221  ls
+  222  vim docker-compose.yaml 
+  223  ls
+  224  mv wordpress.conf nginx/
+  225  ls
+  226  docker-compose up -d 
+  227  docker-compose ps 
+  228  ls 
+  229  cd wordpress/
+  230  ls
+  231  cd ..
+  232  ls
+  233  tail -f logs/nginx/hakase-access.log
+  234  cd 
+  235  cd - 
+  236  ls
+  237  cd ..
+  238  ls
+  239  cd ..
+  240  ls
+  241  cd ..
+  242  ls
+  243  docker run -it -v Docker:/var/www/Docker ubuntu:16.04
+  244  docker run -it -v ./Docker:/var/www/Docker ubuntu:16.04
+  245  cd Docker/
+  246  pwd
+  247  cd ..
+  248  ls
+  249  docker run -it -v /root/k8s-docker-vmware_15April2020/Docker:/var/www/Docker ubuntu:16.04
+  250  docker rm 2bdbb744026c
+  251  ls
+  252  cat image_hist 
+  253  ls
+  254  cd Docker/
+  255  ls
+  256  cat container_info.txt 
+  257  docker run -it -v /root/k8s-docker-vmware_15April2020/Docker:/var/www/Docker ubuntu:16.04
+  258  docker ps 
+  259  cat container_info.txt 
+  260  docker run -it -v /root/k8s-docker-vmware_15April2020/Docker:/var/www/Docker:ro ubuntu:16.04
+  261  ls
+  262  history > Day_1_Histroy.txt 
