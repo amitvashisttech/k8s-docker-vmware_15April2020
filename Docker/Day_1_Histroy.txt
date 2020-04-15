@@ -51,3 +51,50 @@
    51  cd Docker/
    52  ls
    53  history > Day_1_Histroy.txt
+   54  ls
+   55  cd ..
+   56  ls
+   57  git add . ; git commit -m "Day1_History.txt"
+   58  git push 
+   59  ls
+   60  cd Docker/
+   61  ls
+   62  cat Day_1_Histroy.txt 
+   63  docker ps 
+   64  docker attach 62671e4ac3cd
+   65  docker inspect 62671e4ac3cd
+   66  curl 172.17.0.4
+   67  docker ps 
+   68  docker imags 
+   69  docker images
+   70  docker commit -p -m "My First Apache CentOS" 62671e4ac3cd myapache-centos-7:v1
+   71  docker images
+   72  curl 172.17.0.4
+   73  docker run -itd myapache-centos-7:v1
+   74  docker ps 
+   75  docker ps -l 
+   76* doc
+   77  docker inspect $(docker ps -lq)
+   78  curl 172.17.0.6
+   79  docker images 
+   80  docker ps 
+   81  docker attach 794c4cbf226e
+   82  curl 172.17.0.6
+   83  docker ps 
+   84  docker commit -p -m "My First Apache CentOS" 794c4cbf226e myapache-centos-7:v2
+   85  docker ps 
+   86  docker images 
+   87  docker ps -aq
+   88  docker ps -q
+   89  docker kill $(docker ps -q)
+   90  docker ps 
+   91  docker images
+   92  docker run -itd myapache-centos-7:v2
+   93  docker ps 
+   94  curl 172.17.0.2
+   95  curl 172.17.0.3
+   96  curl 172.17.0.4
+   97  docker run -itd myapache-centos-7:v1
+   98  curl 172.17.0.5
+   99  ls
+  100  history > Day_1_Histroy.txt 
