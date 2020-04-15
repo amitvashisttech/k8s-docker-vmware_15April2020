@@ -98,3 +98,49 @@
    98  curl 172.17.0.5
    99  ls
   100  history > Day_1_Histroy.txt 
+  101  cd ../
+  102  git add . ; git commit -m "Day_1_Histroy.txt"; git push 
+  103  docker ps -a 
+  104  docker ps -aq
+  105  docker rm $(docker ps -aq)
+  106  docker ps -aq
+  107  docker ps -a
+  108  cd /var/lib/docker
+  109  ls
+  110  cd containers/
+  111  ls
+  112  cd ..
+  113  ls
+  114  docker images 
+  115  cd 
+  116  ls
+  117  cd k8s-docker-vmware_15April2020/
+  118  ls
+  119  cd Docker/
+  120  ls
+  121  docker pull amitvashist7/k8s-tiny-web
+  122  docker images 
+  123  ls
+  124  mkdir DockerFile 
+  125  ls
+  126  cd DockerFile/
+  127  ls
+  128  vim Dockerfile
+  129  lsw
+  130  ls
+  131  vim amit.html
+  132  ls
+  133  file Dockerfile 
+  134  docker images 
+  135  docker build -t myapache-ubuntu-16-04:v1 .
+  136  ls
+  137  docker images 
+  138  docker run -d myapache-ubuntu-16-04:v1
+  139  docker ps 
+  140  docker inspect cd57cb68e58f
+  141  curl 172.17.0.6
+  142  curl 172.17.0.6/info.html
+  143  ls
+  144  cd ..
+  145  ls
+  146  history > Day_1_Histroy.txt
