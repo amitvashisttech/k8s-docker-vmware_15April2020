@@ -126,3 +126,49 @@
   126  cd K8s/
   127  ls
   128  history > Day2_History.txt 
+  129  git add . ; git commit -m "K8s-Api"; git push 
+  130  ls
+  131  kubectl  get pods 
+  132  kubectl delete pods nodehelloworld 
+  133  ls
+  134  kubectl  get pods 
+  135  kubectl delete pods nodehelloworld-av hello-world-88bc58c65-4z2h4
+  136  kubectl  get pods 
+  137  kubectl delete pod hello-world-88bc58c65-b68rm
+  138  kubectl  get pods 
+  139  ls
+  140  git pull 
+  141  ls
+  142  cd 03-Replication-controller/
+  143  ls
+  144  vim helloworld-repl-controller.yml 
+  145  ls
+  146  kubectl get pods 
+  147  kubectl create -f helloworld-repl-controller.yml 
+  148  kubectl get pods 
+  149  kubectl get rc
+  150  vim helloworld-repl-controller.yml 
+  151  kubectl get rc
+  152  kubectl get pods,rc 
+  153  kubectl create -f helloworld-repl-controller.yml 
+  154  kubectl apply -f helloworld-repl-controller.yml 
+  155  kubectl get pods,rc 
+  156  kubectl scale --replicas=4 -f helloworld-repl-controller.yml 
+  157  kubectl get pods,rc 
+  158  kubectl scale --replicas=5 rc helloworld-controller
+  159  kubectl get pods,rc 
+  160  kubectl edit rc helloworld-controller
+  161  kubectl get pods,rc 
+  162  kubectl delete pod helloworld-controller-nx6fq
+  163  kubectl get pods,rc 
+  164  kubectl get pods,rc -o wide
+  165  kubectl delete pod/helloworld-controller-6vgw5
+  166  kubectl get pods,rc -o wide
+  167  ls
+  168  kubectl get pods,rc -o wide
+  169  kubectl delete replicationcontroller/helloworld-controller
+  170  kubectl get pods,rc 
+  171  ls
+  172  cd ..
+  173  ls
+  174  history > Day2_History.txt 
