@@ -172,3 +172,73 @@
   172  cd ..
   173  ls
   174  history > Day2_History.txt 
+  175  git add . ; git commit -m "03-Replication-controller"; git push 
+  176  ls
+  177  vim 03-Replication-controller/
+  178  ls
+  179  git pull 
+  180  ls
+  181  cd 04-Deployment/
+  182  ls
+  183  cat helloworld.yml 
+  184  kubectl create -f helloworld.yml 
+  185  kubectl get pods 
+  186  kubectl get pods,rc
+  187  kubectl get rc 
+  188  kubectl get rs
+  189  kubectl get deployment
+  190  kubectl get rs
+  191  kubectl get pods
+  192  kubectl get pods --show-labels
+  193  kubectl  get deployment 
+  194  kubectl expose deployment helloworld-deployment --type=NodePort
+  195  kubectl get pods --show-labels
+  196  kubectl  get svc 
+  197  kubectl describe svc helloworld-deployment
+  198  kubectl get deployment
+  199  kubectl scale replicas=1 deployment helloworld-deployment
+  200  kubectl scale --replicas=1 deployment helloworld-deployment
+  201  kubectl get deployment
+  202  kubectl get pods -o wide 
+  203  kubectl describe svc helloworld-deployment
+  204  kubectl scale --replicas=5 deployment helloworld-deployment
+  205  kubectl get pods
+  206  kubectl edit deployment helloworld-deployment
+  207  kubectl get pods 
+  208  watch -n .5 kubectl get pods 
+  209  kubectl edit deployment helloworld-deployment
+  210  watch -n .5 kubectl get pods 
+  211  kubectl edit deployment helloworld-deployment
+  212  watch -n .5 kubectl get pods 
+  213  kubectl get rs 
+  214  kubectl describe rs helloworld-deployment-6c5f9ccb4b
+  215  kubectl get rs 
+  216  kubectl describe rs helloworld-deployment-5d9488c877
+  217  kubectl rollout status deployment 
+  218  kubectl rollout status deployment helloworld-deployment
+  219  kubectl rollout undo deployment helloworld-deployment
+  220  kubectl rollout status deployment helloworld-deployment
+  221  kubectl get rs 
+  222  kubectl rollout undo deployment helloworld-deployment
+  223  kubectl rollout status deployment helloworld-deployment
+  224  kubectl rollout history deployment helloworld-deployment
+  225* kubectl rollout history deployment helloworld-deployment --revisio
+  226  kubectl rollout history deployment helloworld-deployment --revision=4
+  227  kubectl rollout history deployment helloworld-deployment --revision=1
+  228  kubectl rollout undo deployment helloworld-deployment --to-revision=1
+  229  ls
+  230  kubectl get pods 
+  231  kubectl describe pod helloworld-deployment-759fc84489-5gl5b
+  232  kubectl get deployment
+  233  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3
+  234  kubectl rollout history deployment helloworld-deployment 
+  235  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2 --record
+  236  kubectl rollout history deployment helloworld-deployment 
+  237  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3 --record
+  238  kubectl rollout history deployment helloworld-deployment 
+  239  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web --record
+  240  kubectl rollout history deployment helloworld-deployment 
+  241  ls
+  242  cd ..
+  243  ls
+  244  history > Day2_History.txt 
