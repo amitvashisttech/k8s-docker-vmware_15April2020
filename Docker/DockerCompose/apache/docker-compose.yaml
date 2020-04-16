@@ -1,13 +1,13 @@
 ---
 
 mytest-cont:
-  image: myapache-ubuntu-16-04:v1
+  image: amitvashist7/k8s-tiny-web:latest
   ports:
     - '8082:80' 
 
 
 
 myprod-cont:
-  image: myapache-ubuntu-16-04:v1
+  image: amitvashist7/k8s-tiny-web:latest
   ports:
     - '8089:80' 
