@@ -242,3 +242,55 @@
   242  cd ..
   243  ls
   244  history > Day2_History.txt 
+  245  ls
+  246  git add . ; git commit -m "04-Deployment"; git push 
+  247  history 
+  248  cd 
+  249  kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-rc7/aio/deploy/recommended.yaml
+  250  kubectl get pods 
+  251  kubectl  delete deployment helloworld-deployment hello-world
+  252  kubectl get pods 
+  253  ls
+  254  kubectl get ns 
+  255  kubectl get pods ns kubernetes-dashboard
+  256  kubectl get pods -ns kubernetes-dashboard
+  257  kubectl get pods -n kubernetes-dashboard
+  258  kubectl get svc -n kubernetes-dashboard
+  259  kubectl edit svc kubernetes-dashboard -n kubernetes-dashboard
+  260  kubectl get svc -n kubernetes-dashboard
+  261  kubectl get pods -n kubernetes-dashboard -o wide 
+  262  ls
+  263  cd k8s-docker-vmware_15April2020/
+  264  ls
+  265  cd K8s/
+  266  ls
+  267  mkdir 04-Dashboard
+  268  ls
+  269  mv 04-Dashboard 05-Dashboard
+  270  ls
+  271  cd 05-Dashboard/
+  272  ls
+  273  vim sample-user.yaml
+  274  ls
+  275  kubectl create -f sample-user.yaml 
+  276  kubectl get secret -n kubernetes-dashboard -o wide 
+  277  kubectl get secret -n kubernetes-dashboard
+  278  kubectl describe secret  admin-user-1-token-t7gsn -n kubernetes-dashboard
+  279  ls
+  280  history 
+  281  vim README.md
+  282  history 
+  283  vim README.md
+  284  history 
+  285  vim README.md
+  286  cd ..
+  287  ls
+  288  04-Deployment/
+  289  ls
+  290  kubectl craete -f 04-Deployment/helloworld.yml 
+  291  kubectl create-f 04-Deployment/helloworld.yml 
+  292  kubectl create -f 04-Deployment/helloworld.yml 
+  293  ls
+  294  vim 05-Dashboard/README.md 
+  295  ls
+  296  history > Day2_History.txt 
