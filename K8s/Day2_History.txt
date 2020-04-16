@@ -86,3 +86,43 @@
    86  cd K8s/
    87  ls
    88  history > Day2_History.txt
+   89  ls
+   90  cd ..
+   91  ls
+   92  git add . ; git commit -m "02-First-App"; git push 
+   93  kubectl get nodes 
+   94  ip addr 
+   95  172.31.12.151
+   96  kubectl proxy --address='172.31.12.151' --port=8080 --accept-hosts='.' --accept-paths='.' &
+   97  ps -ef | grep -i proxy 
+   98  kill 17879
+   99  ps -ef | grep -i proxy 
+  100  kubectl cluster-info
+  101  kubectl version
+  102  kubectl api-versions
+  103  kubectl api-resources
+  104  kubectl proxy --port:8080 & 
+  105  kubectl proxy --port=8080 & 
+  106  curl localhost:8080/api
+  107  curl localhost:8080/api/v1
+  108  curl localhost:8080/api/v1/pods
+  109  ps -ef | grep -i proxy 
+  110  kill -9 26406
+  111  ps -ef | grep -i proxy 
+  112  kubectl proxy --address='172.31.12.151' --port=8080 --accept-hosts='.' --accept-paths='.' &
+  113  cd /etc/kubernetes/
+  114  ls
+  115  cd manifests/
+  116  ls
+  117  cat kube-apiserver.yaml 
+  118  cat kube-apiserver.yaml | grep -i runtime
+  119  cat kube-apiserver.yaml 
+  120  cd ../../
+  121  ls
+  122  cd 
+  123  ls
+  124  cd k8s-docker-vmware_15April2020/
+  125  ls
+  126  cd K8s/
+  127  ls
+  128  history > Day2_History.txt 
