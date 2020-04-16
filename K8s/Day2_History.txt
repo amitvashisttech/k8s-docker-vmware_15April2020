@@ -1,0 +1,88 @@
+    1  ls
+    2  git clone https://github.com/amitvashisttech/k8s-docker-vmware_15April2020.git
+    3  ls
+    4  cd k8s-docker-vmware_15April2020/
+    5  ls
+    6  cd K8s/
+    7  ls
+    8  cd 01-Setup/
+    9  ls
+   10  ip addr 
+   11  vim install-kubernetes.sh 
+   12  ls
+   13  ./install-kubernetes.sh 
+   14  ls
+   15  cat install-kubernetes.sh 
+   16  ls
+   17  cd ..
+   18  cd - 
+   19  ls
+   20  vim install-node.sh 
+   21  ls
+   22  cd ..
+   23  ls
+   24  cd ..
+   25  ls
+   26  git add . ; git commit -m "K8s-node-file" ; git push 
+   27  ls
+   28  cd 
+   29  kubectl get nodes 
+   30  mkdir -p $HOME/.kube
+   31  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   32  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   33  kubectl get nodes 
+   34  ls
+   35  cd k8s-docker-vmware_15April2020/
+   36  ls
+   37  cd K8s/01-Setup/
+   38  ls
+   39  cat Vagrantfile 
+   40  cd ..
+   41  ls
+   42  cd 01-Setup/
+   43  ls
+   44  ip addr 
+   45  cd 
+   46  kubectl get nodes 
+   47  kubectl get pods 
+   48  ls
+   49  cd k8s-docker-vmware_15April2020/
+   50  ls
+   51  git pull 
+   52  ls
+   53  cd K8s/
+   54  ls
+   55  cd 02-First-App/
+   56  ls
+   57  vim helloworld.yml 
+   58  ls
+   59  kubectl  get nodes 
+   60  kubectl  get pods 
+   61  kubectl create -f helloworld.yml 
+   62  kubectl  get pods 
+   63  kubectl describe pod nodehelloworld
+   64  ls
+   65  kubectl get pods 
+   66  kubectl get svc 
+   67  kubectl expose pod nodehelloworld --type=NodePort
+   68  kubectl get svc 
+   69  kubectl get pods -o wide 
+   70  curl 52.15.143.239:32356
+   71  curl 52.15.143.239:32256
+   72  ls
+   73  vim helloworld.yml 
+   74  ls
+   75  cp -rf helloworld.yml helloworld-av.yaml
+   76  vim helloworld-av.yaml 
+   77  kubectl create -f helloworld-av.yaml 
+   78  kubectl  get pods 
+   79  cat helloworld-av.yaml 
+   80  kubectl run hello-world --image=amitvashist7/k8s-tiny-web:2 --port=80
+   81  kubectl  get pods 
+   82  cd ..
+   83  ls
+   84  cd ..
+   85  ls
+   86  cd K8s/
+   87  ls
+   88  history > Day2_History.txt
