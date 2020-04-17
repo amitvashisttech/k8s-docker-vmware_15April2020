@@ -696,3 +696,200 @@
   696  cd ..
   697  ls
   698  history > Day3_History.txt 
+  699  cd ..
+  700  ls
+  701  git add . ; git commit -m "ConfigMap History"; git push 
+  702  ls
+  703  cd K8s/
+  704  ls
+  705  cd 11-ConfigMap/
+  706  ls
+  707  cat nginx.yml 
+  708  kubectl edit configmap nginx-config
+  709  ls
+  710  cd ..
+  711  l
+  712  git pull 
+  713  ls
+  714  git pull
+  715  ls
+  716  cd 12-Statefullset/
+  717  ls
+  718  cat helloworld-stateful.yaml 
+  719  kubectl create -f helloworld-stateful.yaml 
+  720  kubectl get pods 
+  721  kubectl get statefullset
+  722  kubectl get statefulset
+  723  kubectl edit statefulset
+  724  watch -n 5 kubectl get pods 
+  725  kubectl edit statefulset
+  726  watch -n 5 kubectl get pods 
+  727  kubectl edit statefulset
+  728  watch -n 5 kubectl get pods 
+  729  kubectl edit statefulset 
+  730  watch -n 5 kubectl get pods 
+  731  kubectl get ns 
+  732  kubectl get pods -n kube-system
+  733  kubectl get pods -n kube-system -o wide 
+  734  kubectl get deamonset -n kube-system 
+  735  kubectl get daemonset -n kube-system 
+  736  kubectl describe daemonset calico-node -n kube-system 
+  737  ls
+  738  cd ..
+  739  ls
+  740  cd 13-DeamonSet/
+  741  ls
+  742  vim helloworld.yml 
+  743  ls
+  744  kubectl create -f helloworld.yml 
+  745  kubectl get  daemonset 
+  746  kubectl get pods 
+  747  kubectl get pods -o wide 
+  748* kubectl delete elloworld-daemonset
+  749  cd ..
+  750  ls
+  751  cd 12-Statefullset/
+  752  kubectl delete -f helloworld-stateful.yaml 
+  753  ls
+  754  kubectl get pods 
+  755  cd ..
+  756  ls
+  757  cd 11-ConfigMap/
+  758  ls
+  759  cd ..
+  760  kubectl delete 11-ConfigMap/
+  761  kubectl delete -f 11-ConfigMap/
+  762  git pull 
+  763  ls
+  764  cd 14-Autoscaling/
+  765  ls
+  766  vim hpa-example.yml 
+  767  kubectl create -f hpa-example.yml 
+  768  kubectl get deployment,service,hpa
+  769  kubectl get pods -n kube-system
+  770  kubectl get ns 
+  771  kubectl get pods -n kube-system
+  772  kubectl get pods 
+  773  kubectl get deployment,service,hpa
+  774  ls
+  775  cd ..
+  776  ls
+  777  git pull 
+  778  ks
+  779  ls
+  780  kubectl create -f metrics-server/
+  781  kubectl get pods -n kube-system
+  782  ls
+  783  mv 14-Autoscaling 15-Autoscaling
+  784  mv metrics-server 14-Metrics-server
+  785  ls -ltr 
+  786  ls -l
+  787  kubectl top 
+  788  kubectl top node 
+  789  kubectl top pods 
+  790  kubectl top node 
+  791  while true; do  wget -q -O- http://104.154.81.135:31001 ; done
+  792  ls
+  793  git add . ; git commit -m "ConfigMap History"; git push 
+  794  ls
+  795  git pull 
+  796  ls
+  797  cd 16-Statefullset-Cass/
+  798  ls
+  799  rm -rf helloworld-stateful.yaml 
+  800  ls
+  801  vim cassandra.yaml 
+  802  ls
+  803  cd ..
+  804  ls
+  805  cd 17-nfs-persistent-volume/
+  806  ls
+  807  cat nfs-pv.yaml 
+  808  apt install nfs-kernel-server -y
+  809  apt install nfs-common -y
+  810  ls
+  811  mkdir -p /srv/homes
+  812  chmod 777 -R  /srv/homes
+  813  echo "/srv/homes       *(rw,sync,root_squash,subtree_check)" >> /etc/exports
+  814  systemctl status nfs 
+  815  exportfs 
+  816  ip addr 
+  817  exportfs 
+  818  cd /srv/homes/
+  819  ls
+  820  cd ..
+  821  ls
+  822  cd 
+  823  ls
+  824  cd k8s-docker-vmware_15April2020/
+  825  ls
+  826  cd K8s/
+  827  ls
+  828  cd 17-nfs-persistent-volume/
+  829  ls
+  830  vim nfs-pv.yaml 
+  831  ls
+  832  cat nfs-pvc.yaml 
+  833  ls
+  834  kubectl get pv 
+  835  kubectl get pvc
+  836  kubectl create -f nfs-pv.yaml 
+  837  kubectl get pv 
+  838  kubectl create -f nfs-pvc.yaml 
+  839  kubectl get pvc
+  840  ls
+  841  vim  nfs-web-service.yaml 
+  842  ls
+  843  cat fs-web-rc.yaml 
+  844  ls
+  845  kubectl create -f fs-web-rc.yaml 
+  846  kubectl create -f nfs-web-service.yaml 
+  847  kubectl get svc 
+  848  ls
+  849  cat nfs-busybox-rc.yaml 
+  850  ls
+  851  kubectl get pods -o wide 
+  852  kubectl get svc 
+  853  kubectl edit svc nfs-web
+  854  ls
+  855  kubectl get svc 
+  856  ls
+  857  cd /srv/homes/
+  858  ls
+  859  echo "Hello World" > index.html
+  860  ls
+  861  kubectl get pods 
+  862  kubectl describe pod nfs-web-fwwk8
+  863  ls
+  864  cd 
+  865  cd k8s-docker-vmware_15April2020/
+  866  ls
+  867  cd K8s/
+  868  ls
+  869  cd 17-nfs-persistent-volume/
+  870  ls
+  871  vim nfs-busybox-rc.yaml 
+  872  ls
+  873  kubectl create -f nfs-busybox-rc.yaml 
+  874  cd /srv/homes/
+  875  ls
+  876  ls -ltr 
+  877  kubectl get pods 
+  878  ls -ltr 
+  879  rm -rf index.html 
+  880  ls
+  881  ls -ltr 
+  882  cat index.html 
+  883  cd ..
+  884  ls
+  885  cd ..
+  886  ls
+  887  cd 
+  888  ls
+  889  cd k8s-docker-vmware_15April2020/
+  890  ls
+  891  cd K8s/
+  892  ls
+  893  kubectl delete -f 17-nfs-persistent-volume/
+  894  ls
+  895  history > Day3_History.txt 

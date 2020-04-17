@@ -9,5 +9,5 @@ spec:
     - ReadWriteMany
   nfs:
     # FIXME: use the right IP
-    path: /exports
-    server: master
+    path: /srv/homes
+    server: 172.31.12.151
