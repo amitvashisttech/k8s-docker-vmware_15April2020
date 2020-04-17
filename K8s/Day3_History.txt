@@ -893,3 +893,40 @@
   893  kubectl delete -f 17-nfs-persistent-volume/
   894  ls
   895  history > Day3_History.txt 
+  896  ls
+  897  git add . ; git commit -m "ConfigMap History"; git push 
+  898  ls
+  899  cd 
+  900  ls
+  901  cd amit/
+  902  ls
+  903  mkdir ../k8s-docker-vmware_15April2020/K8s/18-InitContainers
+  904  ls
+  905  cp -rf * ../k8s-docker-vmware_15April2020/K8s/18-InitContainers
+  906  ls
+  907  cd ../k8s-docker-vmware_15April2020/K8s/18-InitContainers
+  908  ls
+  909  vim init-pod.yaml 
+  910  ls
+  911  kubectl create -f init-pod.yaml 
+  912  kubectl get pods 
+  913  kubectl describ pods myapp-pod
+  914  kubectl describe pods myapp-pod
+  915  kubectl log pods myapp-pod -c init-myservice
+  916  kubectl logs myapp-pod -c init-myservice
+  917  kubectl logs myapp-pod -c init-mydb
+  918  kubectl describe pods myapp-pod
+  919  kubectl logs myapp-pod -c init-mydb
+  920  ls
+  921  cat service.yaml 
+  922  kubectl create -f service.yaml 
+  923  kubectl get pods 
+  924  kubectl logs myapp-pod -c init-mydb
+  925  kubectl logs myapp-pod -c init-myservice
+  926  kubectl get svc 
+  927  kubectl logs myapp-pod -c init-mydb
+  928  kubectl run -i --tty busybox-1 --image=busybox:1.28 --restart=Never -- sh
+  929  ls
+  930  cd ..
+  931  ls
+  932  history > Day3_History.txt 
