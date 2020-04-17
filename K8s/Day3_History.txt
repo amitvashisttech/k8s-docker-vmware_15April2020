@@ -517,3 +517,133 @@
   517  cd ..
   518  ls
   519  history > Day3_History.txt 
+  520  cd ..
+  521  ls
+  522  git add . ; git commit -m "07-Label"; git push 
+  523  kubectl  get nodes 
+  524  kubectl get pods 
+  525  ls
+  526  cd K8s/
+  527  ls
+  528  cd 07-Labels/
+  529  ls
+  530  vim helloworld-nodeselector.yml 
+  531  ls
+  532  cd ..
+  533  ls
+  534  cd 06-App-with-Service/
+  535  ls
+  536  cat helloworld-nodeport-service.yml 
+  537  ls
+  538  cd ..
+  539  ls
+  540  cd 07-Labels/
+  541  ls
+  542  kubectl  lable --help 
+  543  kubectl label --help 
+  544  ls
+  545  kubectl get nodes --show-labels
+  546  kubectl label node ip-172-31-12-151 env-
+  547  kubectl get nodes --show-labels
+  548  kubectl label node ip-172-31-12-151 hardware-
+  549  kubectl get nodes --show-labels
+  550  ls
+  551  cd ..
+  552  ls
+  553  git pull 
+  554  ls
+  555  cd 08-HealthCheck/
+  556  ls
+  557  vim helloworld-healthcheck.yml 
+  558  kubectl create -f helloworld-healthcheck.yml 
+  559  kubectl get pods 
+  560  kubectl describe pod helloworld-deployment-7c6f554f6d-8dnr9
+  561  ls
+  562  kubectl get pods 
+  563  kubectl get svc 
+  564  kubectl  delete svc helloworld-service
+  565  kubectl get deployment
+  566  kubectl expose deployment helloworld-deployment --type=NodePort
+  567  kubectl get svc 
+  568  kubectl edit deployment helloworld-deployment
+  569  kubectl get pods 
+  570  kubectl describe pod helloworld-deployment-69cfcbcc95-2hlz6
+  571  kubectl get pods 
+  572  watch -n 5 kubectl get pods
+  573  ls
+  574* kubectl 
+  575  kubectl edit deployment helloworld-deployment
+  576  kubectl rollout undo deployment helloworld-deployment
+  577  kubectl edit deployment helloworld-deployment
+  578  ls
+  579  kubectl get pods 
+  580  kubectl edit deployment helloworld-deployment
+  581  ls
+  582  cd ..
+  583  ls
+  584  git pull 
+  585  ls
+  586  cd 09-Secrets/
+  587  ls
+  588  kubectl get secrets 
+  589  kubectl get pods 
+  590  kubectl describe pod helloworld-deployment-7c6f554f6d-5lmsj
+  591  ls
+  592  kubectl get deployments 
+  593  kubectl delete deployments 
+  594  kubectl delete deployments  helloworld-deployment
+  595  kubectl get pods 
+  596  ls
+  597  cat helloworld-secrets-volumes.yml 
+  598  ls
+  599  cat helloworld-secrets.yml 
+  600  echo -n "root" | base64
+  601  echo -n "password" | base64
+  602  ls
+  603  kubectl create -f helloworld-secrets.yml 
+  604  kubectl get secrets 
+  605  kubectl describe  secrets db-secrets
+  606  ls
+  607  vim helloworld-secrets-volumes.yml 
+  608  kubectl create -f helloworld-secrets-volumes.yml 
+  609  kubectl get pods 
+  610  kubectl describe pod helloworld-deployment-57595c948-69tnv
+  611  kubectl exec -it helloworld-deployment-57595c948-69tnv -- /bin/sh
+  612  ls
+  613  l
+  614  cd ..
+  615  ls
+  616  git pull 
+  617  ls
+  618  history 
+  619  ls
+  620  cd 10-Wordpress/
+  621  ls
+  622  cat wordpress-secrets.yml 
+  623  cat wordpress-service.yml 
+  624  vim wordpress-single-deployment-no-volumes.yml 
+  625  ls
+  626  cd ..
+  627  ls
+  628  kubectl get svc 
+  629  kubectl delete helloworld-deployment
+  630  kubectl delete svc helloworld-deployment
+  631  ls
+  632  kubectl create -f 10-Wordpress/
+  633  kubectl get all 
+  634  kubectl get deployment
+  635  kubectl delete deployment helloworld-deployment
+  636  kubectl get all 
+  637  kubectl get pod -o wide 
+  638  kubectl get pods 
+  639  ls
+  640  cd 10-Wordpress/
+  641  ls
+  642  cat wordpress-secrets.yml 
+  643  kubectl get pods 
+  644  kubectl describe pods wordpress-deployment-6958b7b48f-7xk6v
+  645  kubectl exec -it wordpress-deployment-6958b7b48f-7xk6v -c mysql -- mysql -u root -p 
+  646  ls
+  647  cd ..
+  648  ls
+  649  history > Day3_History.txt 
