@@ -1,0 +1,465 @@
+    1  ls
+    2  git clone https://github.com/amitvashisttech/k8s-docker-vmware_15April2020.git
+    3  ls
+    4  cd k8s-docker-vmware_15April2020/
+    5  ls
+    6  cd K8s/
+    7  ls
+    8  cd 01-Setup/
+    9  ls
+   10  ip addr 
+   11  vim install-kubernetes.sh 
+   12  ls
+   13  ./install-kubernetes.sh 
+   14  ls
+   15  cat install-kubernetes.sh 
+   16  ls
+   17  cd ..
+   18  cd - 
+   19  ls
+   20  vim install-node.sh 
+   21  ls
+   22  cd ..
+   23  ls
+   24  cd ..
+   25  ls
+   26  git add . ; git commit -m "K8s-node-file" ; git push 
+   27  ls
+   28  cd 
+   29  kubectl get nodes 
+   30  mkdir -p $HOME/.kube
+   31  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   32  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   33  kubectl get nodes 
+   34  ls
+   35  cd k8s-docker-vmware_15April2020/
+   36  ls
+   37  cd K8s/01-Setup/
+   38  ls
+   39  cat Vagrantfile 
+   40  cd ..
+   41  ls
+   42  cd 01-Setup/
+   43  ls
+   44  ip addr 
+   45  cd 
+   46  kubectl get nodes 
+   47  kubectl get pods 
+   48  ls
+   49  cd k8s-docker-vmware_15April2020/
+   50  ls
+   51  git pull 
+   52  ls
+   53  cd K8s/
+   54  ls
+   55  cd 02-First-App/
+   56  ls
+   57  vim helloworld.yml 
+   58  ls
+   59  kubectl  get nodes 
+   60  kubectl  get pods 
+   61  kubectl create -f helloworld.yml 
+   62  kubectl  get pods 
+   63  kubectl describe pod nodehelloworld
+   64  ls
+   65  kubectl get pods 
+   66  kubectl get svc 
+   67  kubectl expose pod nodehelloworld --type=NodePort
+   68  kubectl get svc 
+   69  kubectl get pods -o wide 
+   70  curl 52.15.143.239:32356
+   71  curl 52.15.143.239:32256
+   72  ls
+   73  vim helloworld.yml 
+   74  ls
+   75  cp -rf helloworld.yml helloworld-av.yaml
+   76  vim helloworld-av.yaml 
+   77  kubectl create -f helloworld-av.yaml 
+   78  kubectl  get pods 
+   79  cat helloworld-av.yaml 
+   80  kubectl run hello-world --image=amitvashist7/k8s-tiny-web:2 --port=80
+   81  kubectl  get pods 
+   82  cd ..
+   83  ls
+   84  cd ..
+   85  ls
+   86  cd K8s/
+   87  ls
+   88  history > Day2_History.txt
+   89  ls
+   90  cd ..
+   91  ls
+   92  git add . ; git commit -m "02-First-App"; git push 
+   93  kubectl get nodes 
+   94  ip addr 
+   95  172.31.12.151
+   96  kubectl proxy --address='172.31.12.151' --port=8080 --accept-hosts='.' --accept-paths='.' &
+   97  ps -ef | grep -i proxy 
+   98  kill 17879
+   99  ps -ef | grep -i proxy 
+  100  kubectl cluster-info
+  101  kubectl version
+  102  kubectl api-versions
+  103  kubectl api-resources
+  104  kubectl proxy --port:8080 & 
+  105  kubectl proxy --port=8080 & 
+  106  curl localhost:8080/api
+  107  curl localhost:8080/api/v1
+  108  curl localhost:8080/api/v1/pods
+  109  ps -ef | grep -i proxy 
+  110  kill -9 26406
+  111  ps -ef | grep -i proxy 
+  112  kubectl proxy --address='172.31.12.151' --port=8080 --accept-hosts='.' --accept-paths='.' &
+  113  cd /etc/kubernetes/
+  114  ls
+  115  cd manifests/
+  116  ls
+  117  cat kube-apiserver.yaml 
+  118  cat kube-apiserver.yaml | grep -i runtime
+  119  cat kube-apiserver.yaml 
+  120  cd ../../
+  121  ls
+  122  cd 
+  123  ls
+  124  cd k8s-docker-vmware_15April2020/
+  125  ls
+  126  cd K8s/
+  127  ls
+  128  history > Day2_History.txt 
+  129  git add . ; git commit -m "K8s-Api"; git push 
+  130  ls
+  131  kubectl  get pods 
+  132  kubectl delete pods nodehelloworld 
+  133  ls
+  134  kubectl  get pods 
+  135  kubectl delete pods nodehelloworld-av hello-world-88bc58c65-4z2h4
+  136  kubectl  get pods 
+  137  kubectl delete pod hello-world-88bc58c65-b68rm
+  138  kubectl  get pods 
+  139  ls
+  140  git pull 
+  141  ls
+  142  cd 03-Replication-controller/
+  143  ls
+  144  vim helloworld-repl-controller.yml 
+  145  ls
+  146  kubectl get pods 
+  147  kubectl create -f helloworld-repl-controller.yml 
+  148  kubectl get pods 
+  149  kubectl get rc
+  150  vim helloworld-repl-controller.yml 
+  151  kubectl get rc
+  152  kubectl get pods,rc 
+  153  kubectl create -f helloworld-repl-controller.yml 
+  154  kubectl apply -f helloworld-repl-controller.yml 
+  155  kubectl get pods,rc 
+  156  kubectl scale --replicas=4 -f helloworld-repl-controller.yml 
+  157  kubectl get pods,rc 
+  158  kubectl scale --replicas=5 rc helloworld-controller
+  159  kubectl get pods,rc 
+  160  kubectl edit rc helloworld-controller
+  161  kubectl get pods,rc 
+  162  kubectl delete pod helloworld-controller-nx6fq
+  163  kubectl get pods,rc 
+  164  kubectl get pods,rc -o wide
+  165  kubectl delete pod/helloworld-controller-6vgw5
+  166  kubectl get pods,rc -o wide
+  167  ls
+  168  kubectl get pods,rc -o wide
+  169  kubectl delete replicationcontroller/helloworld-controller
+  170  kubectl get pods,rc 
+  171  ls
+  172  cd ..
+  173  ls
+  174  history > Day2_History.txt 
+  175  git add . ; git commit -m "03-Replication-controller"; git push 
+  176  ls
+  177  vim 03-Replication-controller/
+  178  ls
+  179  git pull 
+  180  ls
+  181  cd 04-Deployment/
+  182  ls
+  183  cat helloworld.yml 
+  184  kubectl create -f helloworld.yml 
+  185  kubectl get pods 
+  186  kubectl get pods,rc
+  187  kubectl get rc 
+  188  kubectl get rs
+  189  kubectl get deployment
+  190  kubectl get rs
+  191  kubectl get pods
+  192  kubectl get pods --show-labels
+  193  kubectl  get deployment 
+  194  kubectl expose deployment helloworld-deployment --type=NodePort
+  195  kubectl get pods --show-labels
+  196  kubectl  get svc 
+  197  kubectl describe svc helloworld-deployment
+  198  kubectl get deployment
+  199  kubectl scale replicas=1 deployment helloworld-deployment
+  200  kubectl scale --replicas=1 deployment helloworld-deployment
+  201  kubectl get deployment
+  202  kubectl get pods -o wide 
+  203  kubectl describe svc helloworld-deployment
+  204  kubectl scale --replicas=5 deployment helloworld-deployment
+  205  kubectl get pods
+  206  kubectl edit deployment helloworld-deployment
+  207  kubectl get pods 
+  208  watch -n .5 kubectl get pods 
+  209  kubectl edit deployment helloworld-deployment
+  210  watch -n .5 kubectl get pods 
+  211  kubectl edit deployment helloworld-deployment
+  212  watch -n .5 kubectl get pods 
+  213  kubectl get rs 
+  214  kubectl describe rs helloworld-deployment-6c5f9ccb4b
+  215  kubectl get rs 
+  216  kubectl describe rs helloworld-deployment-5d9488c877
+  217  kubectl rollout status deployment 
+  218  kubectl rollout status deployment helloworld-deployment
+  219  kubectl rollout undo deployment helloworld-deployment
+  220  kubectl rollout status deployment helloworld-deployment
+  221  kubectl get rs 
+  222  kubectl rollout undo deployment helloworld-deployment
+  223  kubectl rollout status deployment helloworld-deployment
+  224  kubectl rollout history deployment helloworld-deployment
+  225  kubectl rollout history deployment helloworld-deployment --revisio
+  226  kubectl rollout history deployment helloworld-deployment --revision=4
+  227  kubectl rollout history deployment helloworld-deployment --revision=1
+  228  kubectl rollout undo deployment helloworld-deployment --to-revision=1
+  229  ls
+  230  kubectl get pods 
+  231  kubectl describe pod helloworld-deployment-759fc84489-5gl5b
+  232  kubectl get deployment
+  233  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3
+  234  kubectl rollout history deployment helloworld-deployment 
+  235  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2 --record
+  236  kubectl rollout history deployment helloworld-deployment 
+  237  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3 --record
+  238  kubectl rollout history deployment helloworld-deployment 
+  239  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web --record
+  240  kubectl rollout history deployment helloworld-deployment 
+  241  ls
+  242  cd ..
+  243  ls
+  244  history > Day2_History.txt 
+  245  ls
+  246  git add . ; git commit -m "04-Deployment"; git push 
+  247  history 
+  248  cd 
+  249  kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-rc7/aio/deploy/recommended.yaml
+  250  kubectl get pods 
+  251  kubectl  delete deployment helloworld-deployment hello-world
+  252  kubectl get pods 
+  253  ls
+  254  kubectl get ns 
+  255  kubectl get pods ns kubernetes-dashboard
+  256  kubectl get pods -ns kubernetes-dashboard
+  257  kubectl get pods -n kubernetes-dashboard
+  258  kubectl get svc -n kubernetes-dashboard
+  259  kubectl edit svc kubernetes-dashboard -n kubernetes-dashboard
+  260  kubectl get svc -n kubernetes-dashboard
+  261  kubectl get pods -n kubernetes-dashboard -o wide 
+  262  ls
+  263  cd k8s-docker-vmware_15April2020/
+  264  ls
+  265  cd K8s/
+  266  ls
+  267  mkdir 04-Dashboard
+  268  ls
+  269  mv 04-Dashboard 05-Dashboard
+  270  ls
+  271  cd 05-Dashboard/
+  272  ls
+  273  vim sample-user.yaml
+  274  ls
+  275  kubectl create -f sample-user.yaml 
+  276  kubectl get secret -n kubernetes-dashboard -o wide 
+  277  kubectl get secret -n kubernetes-dashboard
+  278  kubectl describe secret  admin-user-1-token-t7gsn -n kubernetes-dashboard
+  279  ls
+  280  history 
+  281  vim README.md
+  282  history 
+  283  vim README.md
+  284  history 
+  285  vim README.md
+  286  cd ..
+  287  ls
+  288  04-Deployment/
+  289  ls
+  290  kubectl craete -f 04-Deployment/helloworld.yml 
+  291  kubectl create-f 04-Deployment/helloworld.yml 
+  292  kubectl create -f 04-Deployment/helloworld.yml 
+  293  ls
+  294  vim 05-Dashboard/README.md 
+  295  ls
+  296  history > Day2_History.txt 
+  297  git add . ; git commit -m "05-Dashboard"; git push 
+  298  kubectl get pods 
+  299  kubectl delete deployment helloworld-deployment
+  300  kubectl taint nodes --all node-role.kubernetes.io/master-
+  301  kubectl get pods 
+  302  kubectl get nodes 
+  303  ls
+  304  mkidr amit
+  305  mkdir amit
+  306  cd amit/
+  307  ls
+  308  vim init-pod.yaml
+  309  ls
+  310  kubectl create -f init-pod.yaml 
+  311  kubectl get pods 
+  312  kubectl describe pod myapp-pod
+  313  kubectl logs myapp-pod -c init-myservice 
+  314  vi service.yaml
+  315  kubectl create -f service.yaml 
+  316  kubectl logs myapp-pod -c init-myservice 
+  317  kubectl describe pod myapp-pod
+  318  kubectl get pods 
+  319  kubectl logs myapp-pod -c init-myservice 
+  320  kubectl logs myapp-pod -c init-mydb
+  321  kubectl logs myapp-pod -c init-myservice 
+  322  kubectl get pods 
+  323  kubectl get svc 
+  324  kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
+  325  kubectl get pods -n kube-system
+  326  kubectl get pods -n kube-system -o wide 
+  327  kubectl get svc  -n kube-system -o wide 
+  328  kubectl describe svc kube-dns  -n kube-system -o wide 
+  329  kubectl describe svc kube-dns  -n kube-system 
+  330  kubectl get svc  -n kube-system -o wide 
+  331  kubectl get pods -n kube-system -o wide 
+  332  kubectl delete pods coredns-54ff9cd656-ft6fz coredns-54ff9cd656-qstp8 -n kube-system -o wide 
+  333  kubectl delete pods coredns-54ff9cd656-ft6fz coredns-54ff9cd656-qstp8 -n kube-system 
+  334  kubectl get pods -n kube-system -o wide 
+  335  kubectl get pods 
+  336  kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
+  337  kubectl delete pod busybox
+  338  kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
+  339  kubectl run -i --tty busybox-1 --image=busybox:1.28 --restart=Never -- sh
+  340  ls
+  341  kubectl logs myapp-pod -c init-myservice 
+  342  kubectl get svc 
+  343  cat init-pod.yaml 
+  344  kubectl get pods 
+  345  kubectl get svc 
+  346  ls
+  347  cat service.yaml 
+  348  cat init-pod.yaml 
+  349  cat service.yaml 
+  350  kubectl get nodes 
+  351  ls
+  352  cd k8s-docker-vmware_15April2020/
+  353  ls
+  354  cd K8s/
+  355  ls
+  356  cd ..
+  357  ls
+  358  kubectl get svc 
+  359  kubectl get ns 
+  360  kubectl get svc -n default
+  361  kubectl get svc -n kubernetes-dashboard
+  362  kubectl get pod -n kubernetes-dashboard
+  363  kubectl get pod 
+  364  ls
+  365  kubectl get pod  -n kubernetes-dashboard
+  366  kubectl get pod  -n kubernetes-dashboard -o wide 
+  367  kubectl get svc -n kubernetes-dashboard
+  368  kubectl get nodes 
+  369  ls
+  370  kubectl taint nodes --all node-role.kubernetes.io/master-
+  371  kubectl get ns 
+  372  kubectl get pod -n kube-system
+  373  ls
+  374  kubectl get pods 
+  375  kubectl get deployments 
+  376  kubectl get deployment
+  377  kubectl get delete busybox busybox-1 myapp-pod
+  378  kubectl get pods 
+  379  kubectl delete busybox busybox-1 myapp-pod
+  380  kubectl delete pod busybox busybox-1 myapp-pod
+  381  ls
+  382  kubectl get svc 
+  383  kubectl delete svc nodehelloworld myservice myd bhelloworld-deployment
+  384  kubectl delete svc nodehelloworld myservice mydb helloworld-deployment
+  385  kubectl get svc 
+  386  ls
+  387  cd K8s/
+  388  ls
+  389  cd 04-Deployment/
+  390  ls
+  391  vim helloworld.yml 
+  392  ls
+  393  cd ..
+  394  l
+  395  cd 02-First-App/
+  396  ls
+  397  cd ..
+  398  ls
+  399  cp -rf 02-First-App 06-App-with-Service
+  400  ls
+  401  cd 06-App-with-Service/
+  402  ls
+  403  rm -rf helloworld-av.yaml 
+  404  ls
+  405  cat helloworld.yml 
+  406  kubectl create -f helloworld.yml 
+  407  kubectl get pods 
+  408  kubectl get svc 
+  409  ls
+  410  vim helloworld-service.yml 
+  411  ls
+  412  kubectl create -f helloworld-service.yml 
+  413  kubectl get svc 
+  414  kubectl delete -f helloworld-service.yml 
+  415  ls
+  416  vim helloworld-nodeport-service.yml 
+  417  kubectl create -f helloworld-nodeport-service.yml 
+  418  kubectl get svc 
+  419  kubectl describe svc helloworld-service
+  420  kubectl get pods -o wide 
+  421  ls
+  422  kubectl get svc 
+  423  lls
+  424  ls
+  425  vim helloworld-nodeport-service.yml 
+  426  kubectl apply -f helloworld-nodeport-service.yml 
+  427  kubectl get svc 
+  428  kubectl delete svc helloworld-service
+  429  kubectl apply -f helloworld-nodeport-service.yml 
+  430  kubectl get svc 
+  431  ls
+  432  kubectl get pods 
+  433  ls
+  434  cp -rf helloworld helloworld-tomcat.yaml
+  435  cp -rf helloworld.yml helloworld-tomcat.yaml
+  436  ls
+  437  vim helloworld-tomcat.yaml 
+  438  kubectl create -f helloworld-tomcat.yaml 
+  439  kubectl get pods 
+  440  vim helloworld-tomcat.yaml 
+  441  kubectl create -f helloworld-tomcat.yaml 
+  442  kubectl get pods 
+  443  kubectl decribe pod nodehelloworld-tomcat
+  444  kubectl describe pod nodehelloworld-tomcat
+  445  kubectl get pods 
+  446  kubectl get svc 
+  447  kubectl describe svc helloworld-service
+  448  kubectl get pods 
+  449  curl http://3.21.244.163:31001/
+  450  kubectl delete pod nodehelloworld
+  451  ls
+  452  kubectl get pods 
+  453  ls
+  454  cd ..
+  455  ls
+  456  cd ..
+  457  ls
+  458  git add . ; git commit -m "06-App-with-Service"; git push 
+  459  git pull 
+  460  ls
+  461  git add . ; git commit -m "06-App-with-Service"; git push 
+  462  ls
+  463  cd K8s/
+  464  ls
+  465  history > Day3_History.txt
