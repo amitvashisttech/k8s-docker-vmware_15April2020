@@ -10,4 +10,4 @@ kubectl get secret -n kubernetes-dashboard
 
 
 Step:4 "Grab the Token & Use the same to login to K8s Dashboard"
-kubectl describe secret  admin-user-1-token-t7gsn -n kubernetes`-dashboard
+kubectl describe secret  admin-user-1-token-t7gsn -n kubernetes-dashboard
