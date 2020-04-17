@@ -463,3 +463,57 @@
   463  cd K8s/
   464  ls
   465  history > Day3_History.txt
+  466* 
+  467  ls
+  468  git add . ; git commit -m "06-App-with-Service"; git push 
+  469  ls
+  470  cd K8s/
+  471  ls
+  472  git pull 
+  473  ls
+  474  kubectl get nodes --show-labels
+  475  ls
+  476  cd 07-Labels/
+  477  ls
+  478  vim helloworld-nodeselector.yml 
+  479  ls
+  480  kubectl create -f helloworld-nodeselector.yml 
+  481  cp -rf helloworld-nodeselector.yml helloworld-nodeselector_1.yml 
+  482  vim helloworld-nodeselector_1.yml 
+  483  kubectl create -h helloworld-nodeselector_1.yml 
+  484  kubectl create -f helloworld-nodeselector_1.yml 
+  485  ls
+  486  kubectl get pods 
+  487  kubectl delete pod nodehelloworld-tomcat
+  488  ls
+  489  kubectl get pods 
+  490  kubectl describe pod helloworld-deployment-9dbf955f4-85x6p
+  491  cat helloworld-nodeselector_1.yml 
+  492  kubectl get nodes --show-labels
+  493  kubectl label nodes ip-172-31-11-187 hardware=virtual
+  494  kubectl get nodes --show-labels
+  495  kubectl get pods 
+  496  kubectl label nodes ip-172-31-12-151 hardware=virtual
+  497  kubectl get nodes --show-labels
+  498  kubectl get pods 
+  499  cat helloworld-nodeselector.yml 
+  500  kubectl label nodes ip-172-31-12-151 env=prod
+  501  kubectl get nodes --show-labels
+  502  kubectl get pods 
+  503  kubectl get pods -o wide 
+  504  ls
+  505  kubectl get pods -o wide 
+  506  vim helloworld-nodeselector
+  507  vim helloworld-nodeselector_1.yml 
+  508  ls
+  509  kubectl get deployments 
+  510  kubectl edit deployments helloworld-deployment
+  511  kubectl get pods -o wide 
+  512  kubectl delete -f helloworld-nodeselector_1.yml 
+  513  ls
+  514  kubectl get pods 
+  515  kubectl delete -f helloworld-nodeselector.yml 
+  516  ls
+  517  cd ..
+  518  ls
+  519  history > Day3_History.txt 
